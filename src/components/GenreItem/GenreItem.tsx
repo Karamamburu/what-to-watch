@@ -5,7 +5,7 @@ type GenreItemProps = {
 function GenreItem({genreName}: GenreItemProps) {
   return (
     <li className="catalog__genres-item">
-      <a href="#" className="catalog__genres-link">
+      <a href="/" className="catalog__genres-link">
         {genreName}
       </a>
     </li>
