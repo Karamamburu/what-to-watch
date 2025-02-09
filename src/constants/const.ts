@@ -11,6 +11,13 @@ const GENRES_ITEMS: string[] = [
   'Thrillers',
 ];
 
+enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}
+
 export {
-  GENRES_ITEMS
+  GENRES_ITEMS,
+  AuthorizationStatus
 };
