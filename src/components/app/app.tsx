@@ -1,22 +1,25 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddReview from '../../pages/AddReview/AddReview';
 import MainPage from '../../pages/MainPage/MainPage';
-import HeadGuest from '../../pages/HeadGuest/HeadGuest';
-import MoviePage from '../../pages/MoviePage/MoviePage';
-import MoviePageDetails from '../../pages/MoviePageDetails/MoviePageDetails';
-import MoviePageInList from '../../pages/MoviePageInList/MoviePageInList';
-import MoviePageReviews from '../../pages/MoviePageReviews/MoviePageReviews';
-import MyList from '../../pages/MyList/MyList';
-import NotFound from '../../pages/NotFound/NotFound';
-import Player from '../../pages/Player/Player';
-import PlayerPause from '../../pages/PlayerPause/PlayerPause';
 import SignIn from '../../pages/SignIn/SignIn';
-import SignInError from '../../pages/SignInError/SignInError';
-import SignInMessage from '../../pages/SignInMessage/SignInMessage';
+import MyList from '../../pages/MyList/MyList';
+import MoviePage from '../../pages/MoviePage/MoviePage';
+import Player from '../../pages/Player/Player';
+import NotFound from '../../pages/NotFound/NotFound';
 
 function App(): JSX.Element {
   return (
-    <MainPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/mylist" element={<MyList />} />
+        <Route path="/films/:id" element={<MoviePage />} />
+        <Route path="/films/:id/review" element={<AddReview />} />
+        <Route path="/player/:id" element={<Player />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
