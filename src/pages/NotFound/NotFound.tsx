@@ -1,8 +1,10 @@
+import {Link} from 'react-router-dom'
+
 function NotFound() {
   return (
     <>
         <p>404 not found</p>
-        <a href="/">go home</a>
+        <Link to="/">Go to main page</Link>
     </>
   );
 }
